@@ -117,42 +117,8 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bienvenido al panel de administrador",
     "site_title": "Panel de administrador",
     "copyright": "| Jardín de Niños Solecito",
-    "search_model": "auth.User",
-    "user_avatar": None,
     "custom_css": None,
-    "custom_js": None,
-    "show_ui_builder": False,
-    "navigation_expanded": True,
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-    },
-    "default_icon_parents": "fas fa-chevron-circle-right",
-    "default_icon_children": "fas fa-circle",
-    "related_modal_active": False,
-    "custom_links": {
-        "books": [{
-            "name": "Make Messages",
-            "url": "make_messages",
-            "icon": "fas fa-comments",
-            "permissions": ["books.view_book"]
-        }]
-    },
-    "usermenu_links": [
-        {"model": "auth.user"}
-    ],
-    "show_sidebar": True,
-    "navigation_expanded": True,
-    "hide_apps": [],
-    "hide_models": [],
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
-    "custom_css": "inicio/css/admin_custom.css",  # Ruta del archivo CSS personalizado
-    "use_google_fonts_cdn": True,
-    "changeform_format": "single",
-    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
-    "hide_version": False,
+    "custom_css": "inicio/css/admin_custom.css",
 }
 
 
