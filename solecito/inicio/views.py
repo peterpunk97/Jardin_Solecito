@@ -19,3 +19,7 @@ def tareas(request):
 def contacto(request):
     return render(request, "inicio/contacto.html")
 
+
+def seguridad(request,nombre=None):
+    return render(request, "inicio/seguridad.html",)
+
