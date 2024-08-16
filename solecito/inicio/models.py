@@ -67,3 +67,21 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nombreEvento
+    
+
+class Comentario(models.Model):
+    nombre = models.CharField(max_length=100, verbose_name="Nombre del padre de familia")  
+    correo = models.EmailField(max_length=254, verbose_name="Correo electronico")  
+    telefono = models.CharField(max_length=15, blank=True, null=True, verbose_name="Telefono")
+    mensaje = models.TextField()
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
+    grupos = models.CharField(max_length=4, verbose_name="Nombre del grupo") 
+
+
+    class Meta:
+        verbose_name = "Comentario"
+        verbose_name_plural = "Comentarios"
+
+    def __str__(self):
+        return self.nombre
