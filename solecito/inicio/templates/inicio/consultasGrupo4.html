@@ -1,0 +1,104 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+{% block titulo%} Tareas Grupo 2B{% endblock%}
+{% block titulobreadcrumb %}Grupo 2B{% endblock %}
+{% block imagenbreadcrumb%}{% static 'inicio/img/bg/bdrc-bg.jpg' %}{% endblock %}
+
+{% block content %}
+
+<!-- Select -->
+<section class="class-area pt-50">
+    <div class="container">
+        <form method="GET" action="" id="grupoForm">
+            <div class="form-group">
+                <label for="grupo">Filtrar por:</label>
+                <select name="grupo" id="grupo" class="form-control" onchange="mandarAGrupo()">
+                    <option value="">--Selecciona un grupo--</option>
+                    <option value="{% url 'Grupo1A' %}">Grupo 1A</option>
+                    <option value="{% url 'Grupo1B' %}">Grupo 1B</option>
+                    <option value="{% url 'Grupo2A' %}">Grupo 2A</option>
+                    <option value="{% url 'Grupo2B' %}">Grupo 2B</option>
+                    <option value="{% url 'TODOS' %}">Para todos</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<!-- Cards -->
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for tarea in tareas %}
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="class-item mb-30">
+                    <div class="class-img">
+                        <div class="class-img-outer">
+                            <img src="{{tarea.imagen.url}}" alt="class image">
+                        </div>
+                    </div>
+                    <div class="class-content">
+                        <h4 class="title"><a href="#" data-bs-toggle="modal"
+                                data-bs-target="#modal{{ forloop.counter }}">{{tarea.nombreTarea}}</a></h4>
+                        <p class="description">{{tarea.descripcion}}</p>
+                        <ul class="schedule">
+                            <li>
+                                <span>Grupo</span>
+                                <span class="class-size">{{tarea.grupo}}</span>
+                            </li>
+                            <li>
+                                <span>Entrega:</span>
+                                <span class="class-size class-size-2">{{tarea.fechaEntrega}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal{{ forloop.counter }}" tabindex="-1"
+                aria-labelledby="modalLabel{{ forloop.counter }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel{{ forloop.counter }}">{{tarea.nombreTarea}}
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{tarea.imagen.url}}" class="class-img-outer" alt="tarea image">
+                            <span><strong>Grupo:</strong> {{tarea.grupo}}</span>
+                            <br>
+                            <span></span><strong>Entrega:</strong> {{tarea.fechaEntrega}}</span>
+                            <br>
+                            <span></span><strong>Materia:</strong> {{tarea.materia}}</span>
+                            <br>
+                            <span class="description"><strong>Descripción: </strong>
+                                <p>{{tarea.descripcion}}</p>
+                            </span>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+            <!-- Enlace de Bootstrap para el Modal -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+            <!-- Enlace de Bootstrap para el Modal -->
+        </div>
+    </div>
+</section>
+
+<br>
+<br>
+
+
+{% endblock %}
