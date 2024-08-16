@@ -1,6 +1,106 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+{% block titulo%}Acerca de nosotros{% endblock%}
+{% block titulobreadcrumb %}Acerca de nosotros{% endblock %}
+{% block imagenbreadcrumb%}{% static "inicio/img/bg/acerca.png" %}{% endblock %}
 
-<h1>nosotros</h1>
 
-<h2>Prueba Git</h2>
-<h2>Prueba Git 4</h2>
-<h2>Prueba Git 5</h2>
+
+
+{% block content %}
+<!-- Aerca de nosotros -->
+<section class="about-area about-p pt-120 pb-195 p-relative" style="background: #f7f9ff;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+             <div class="col-lg-6 col-md-12 col-sm-12">
+                <div >
+                    <img src="{% static 'inicio/img/features/about_img.png' %}" alt="img">    
+                </div>
+              
+            </div>
+            
+        <div class="col-lg-6 col-md-12 col-sm-12">
+                <div>
+                    <div class="about-title second-title pb-25">  
+                        <h5>Bienvenidos al</h5>
+                        <h2>Jardín de Niños Solecito</h2>                                   
+                    </div>
+                       <p>En el Jardín de Niños Solecito, nuestra misión es brindar una educación integral y de calidad a los más pequeños, fomentando su desarrollo emocional, social, y cognitivo en un ambiente seguro y acogedor. Fundado en 2009, nuestro jardín ha sido un faro de excelencia educativa en la ciudad de Morelia.</p>
+                      <br>
+                      <h5>Nuestra Filosofía</h5>
+                      <p>Creemos firmemente en el potencial de cada niño y en la importancia de los primeros años de educación para establecer las bases de un futuro exitoso. Nuestro enfoque pedagógico se basa en métodos innovadores y lúdicos que estimulan la curiosidad, la creatividad, y el amor por el aprendizaje. Valoramos la individualidad de cada niño y adaptamos nuestras estrategias educativas para satisfacer sus necesidades y talentos únicos.</p>
+                      
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</section>
+<!-- Aerca de nosotros -->
+
+
+<section class="project-detail">
+    <div class="container">
+        <div class="lower-content">
+            <div class="row">
+                <div class="text-column col-lg-12 col-md-12 col-sm-15">
+                    <h2>Nuestros programas de estudio</h2>
+                        <p>Ofrecemos una variedad de programas educativos que abarcan desde el desarrollo de habilidades básicas hasta actividades extracurriculares que enriquecen la experiencia educativa de nuestros alumnos. Nuestro currículo incluye:</p>
+                       
+                        <table class="table table-bordered mb-30">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Desarrollo Cognitivo</th>
+                                                        <th>Desarrollo Social y Emocional</th>
+                                                        <th>Arte y Creatividad</th>
+                                                        <th>Deportes y Movimiento</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>Actividades para mejorar habilidades de lectura y escritura.</td>
+                                                        <td>Juegos de rol y dramatización para desarrollar la empatía.</td>
+                                                        <td>Talleres de pintura y dibujo.</td>
+                                                        <td>Ejercicios de coordinación y equilibrio.</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Clases de matemáticas básicas y resolución de problemas.</td>
+                                                        <td>Dinámicas grupales para fomentar el trabajo en equipo.</td>
+                                                        <td>Clases de música y canto.</td>
+                                                        <td>Deportes organizados como fútbol y baloncesto.</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Juegos de lógica y puzzles para el pensamiento crítico.</td>
+                                                        <td>Actividades que promueven la inteligencia emocional, como el reconocimiento y gestión de emociones.</td>
+                                                        <td>Manualidades y proyectos de arte.</td>
+                                                        <td>Actividades al aire libre y juegos en equipo.</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Introducción a conceptos científicos básicos a través de experimentos simples.</td>
+                                                        <td>Círculos de diálogo para mejorar habilidades de comunicación.</td>
+                                                        <td>Teatro y representaciones escénicas.</td>
+                                                        <td>Clases de educación física adaptadas a la edad.</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Uso de tecnología educativa, como tablets y software educativo.</td>
+                                                        <td>Proyectos colaborativos que requieren cooperación y resolución de conflictos.</td>
+                                                        <td>Talleres de creatividad y expresión artística.</td>
+                                                        <td>Juegos que promueven la actividad física diaria.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                        <h2>Expectativas</h2>
+                        <p> Al finalizar nuestros programas educativos, esperamos que los niños hayan desarrollado sólidas habilidades cognitivas y académicas, incluyendo una fuerte base en lectura, escritura, matemáticas y pensamiento crítico. Además, habrán mejorado significativamente en su capacidad para empatizar, comunicarse y trabajar en equipo, gracias a actividades diseñadas para fomentar la inteligencia emocional y las habilidades sociales. </p>
+                        <p>En el ámbito creativo, habrán explorado y cultivado su talento a través del arte, la música y el teatro, lo que les permitirá expresarse de manera innovadora y original. Asimismo, anticipamos que habrán adoptado hábitos de vida saludables y una actitud positiva hacia la actividad física, participando activamente en deportes y ejercicios que promuevan su bienestar físico. En conjunto, estos logros no solo prepararán a los niños para enfrentar futuros desafíos académicos y personales con confianza y resiliencia, sino que también les proporcionarán una base integral para convertirse en individuos creativos, emocionalmente equilibrados y físicamente activos. </p>
+                        
+                    </div>
+                </div>
+            
+                </section>
+</section>
+{% endblock content %}
