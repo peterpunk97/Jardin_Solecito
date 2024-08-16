@@ -1,1 +1,75 @@
-<h1>calendario</h1>
+{% extends 'inicio/base.html' %}
+{% load static %}
+{% block titulo%}Calendario{% endblock%}
+{% block titulobreadcrumb %}Calendario{% endblock %}
+{% block imagenbreadcrumb%}{% static "inicio/img/bg/calendario-bg.png" %}{% endblock %}
+
+{% block content %}
+             <!-- Cards -->
+             <section class="class-area pt-120 pb-120 p-relative">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {% for evento in eventos %}
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="class-item mb-30">
+                                <div class="class-img">
+                                    <div class="class-img-outer">
+                                        <img src="{{evento.imagen.url}}" alt="class image">
+                                    </div>
+                                </div>
+                                <div class="class-content">
+                                    <h4 class="title"><a href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modal{{ forloop.counter }}">{{evento.nombreEvento}}</a></h4>
+                                    <p class="description">{{evento.descripcion}}</p>
+                                    <ul class="schedule">
+                                        <li>
+                                            <span>Grupo</span>
+                                            <span class="class-size">{{evento.grupo}}</span>
+                                        </li>
+                                        <li>
+                                            <span>Fecha:</span>
+                                            <span class="class-size class-size-2">{{evento.fechaEvento}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal{{ forloop.counter }}" tabindex="-1"
+                            aria-labelledby="modalLabel{{ forloop.counter }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel{{ forloop.counter }}">{{evento.nombreEvento}}
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="{{evento.imagen.url}}" class="class-img-outer" alt="tarea image">
+                                        <span><strong>Grupo:</strong> {{evento.grupo}}</span>
+                                        <br>
+                                        <span></span><strong>Fecha:</strong> {{evento.fechaEvento}}</span>
+                                        <br>
+                                        <span class="description"><strong>Descripción: </strong>
+                                            <p>{{evento.descripcion}}</p>
+                                        </span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        {% endfor %}
+                        <!-- Enlace de Bootstrap para el Modal -->
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+                        <!-- Enlace de Bootstrap para el Modal -->  
+            </main>
+            <br>
+            <br>
+{% endblock %}
