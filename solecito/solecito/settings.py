@@ -20,6 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,7 +28,66 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inicio',
+    
 ]
+
+#Jazzmin Config - Diccionario de datos para añadir funcionalidades
+JAZZMIN_SETTINGS = {
+
+    "site_title": "Panel de Administración",
+    "site_brand": "Administrador",
+    "site_logo": "inicio/img/logo/logosolecito.png",
+    "site_header": "Administrador Solecito",
+    "welcome_sign": "Bienvenido al panel de administrador",
+    "site_title": "Panel de administrador",
+    "copyright": "| Jardín de Niños Solecito",
+    "search_model": "auth.User",
+    "user_avatar": None,
+    "custom_css": None,
+    "custom_js": None,
+    "show_ui_builder": False,
+    "navigation_expanded": True,
+    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.Group": "fas fa-users",
+        "auth.user": "fas fa-user",
+        
+    },
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    "related_modal_active": False,
+    "custom_links": {
+        "books": [{
+            "name": "Make Messages",
+            "url": "make_messages",
+            "icon": "fas fa-comments",
+            "permissions": ["books.view_book"]
+        }]
+    },
+    "usermenu_links": [
+        {"model": "auth.user"}
+    ],
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": [],
+    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
+    "custom_css": "inicio/css/admin_custom.css",  # Ruta del archivo CSS personalizado
+    "use_google_fonts_cdn": True,
+    "changeform_format": "single",
+    "changeform_format_overrides": {"auth.group": "vertical_tabs","auth.user": "collapsible", },
+}
+    
+
+
+#Para cambiar el lenguaje a español
+LANGUAGE_CODE = 'es-es'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
