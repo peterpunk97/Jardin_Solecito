@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html class="no-js" lang="es">
     
@@ -265,3 +266,111 @@
             </div>
         </div>
     </footer>
+=======
+{% extends 'inicio/base.html' %}
+{% load static %}
+{% block titulo%}Contacto{% endblock%}
+{% block titulobreadcrumb %}Contacto{% endblock %}
+{% block imagenbreadcrumb%}{% static "inicio/img/bg/contacto.png" %}{% endblock %}
+
+
+{% block content %}
+
+<section id="contact" class="contact-area after-none contact-bg pt-120 pb-120 p-relative fix"
+    style="background: #f8f9fe;">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-6 order-1">
+                <img src="{% static 'inicio/img/bg/contact-img.png' %}" alt="img">
+            </div>
+            <div class="col-lg-6 order-2">
+                <div>
+                    <div class="section-title center-align">
+                        <h5>¿Aguna duda con la tarea?</h5>
+                        <h3>
+                            Escribe aquí tus datos seguido de tu duda o comentario
+                        </h3>
+
+                    </div>
+
+                    <form action="{% url 'Registrar' %}" method="POST" class="contact-form mt-35">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-name mb-30">
+                                    <input type="text" id="firstn" name="nombre" placeholder="Tu nombre" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-subject mb-30">
+                                    <input type="text" id="email" name="correo" placeholder="Correo electrónico"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-subject mb-30">
+                                    <label for="grupo">Selecciona el grupo de tu hijo/a</label>
+                                    <select id="grupo" name="grupos" required>
+                                        <option value="1A">1A</option>
+                                        <option value="1B">1B</option>
+                                        <option value="2A">2A</option>
+                                        <option value="2B">2B</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-subject mb-30">
+                                    <input type="text" id="phone" name="telefono" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-message mb-30">
+                                    <textarea name="mensaje" id="message" cols="30" rows="10"
+                                        placeholder="Escribe tus dudas o comentarios aquí"></textarea>
+                                </div>
+                                <div class="slider-btn">
+                                    <button class="btn mr-15" data-animation="fadeInUp" data-delay=".4s"
+                                        type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MAPA -->
+<div class="map fix" style="background: #f5f5f5;">
+    <div class="container-flud">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8520.137787296826!2d-101.1702575135272!3d19.727974482718686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e2765411ef1%3A0x3ca21a3f9f26b9b1!2sUniversidad%20Tecnol%C3%B3gica%20de%20Morelia!5e0!3m2!1ses-419!2smx!4v1720381811081!5m2!1ses-419!2smx"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MAPA -->
+
+
+{% endblock %}
+>>>>>>> origin/Alexis
