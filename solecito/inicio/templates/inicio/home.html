@@ -1,237 +1,35 @@
-<!doctype html>
-<html class="no-js" lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inicio</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+{% extends 'inicio/base.html' %}
 
-    <!-- CSS -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'inicio/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/fontawesome/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/font-flaticon/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/dripicons.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/meanmenu.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/default.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'inicio/css/responsive.css' %}">
-</head>
-<body>
-    <!-- header -->
-    <header class="header-area header-three">
-        <div id="header-sticky" class="menu-area">
+{% load static %}
+{% block titulo %}Inicio{% endblock %}
+{% block titulobreadcrumb %}Inicio{% endblock %}
+{% block imagenbreadcrumb%}{% static "inicio/img/bg/chiquillos.png" %}{% endblock %}
+
+
+{% block content %}
+<section id="parallax" class="slider-area slider-four fix p-relative">
+    
+    <div class="slider-active">
+        <div class="single-slider slider-bg d-flex align-items-center" >
+            <div class="img-main" data-animation="fadeInLeft" data-delay=".2s">
+                <img src="{% static 'inicio/img/bg/solecito.png' %}" alt="slider-overlay">
+            </div>
             <div class="container">
-                <div class="second-menu">
-                    <div class="row align-items-center">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo">
-                                <a href="{% url 'Home' %}"><img src="{% static 'inicio/img/logo/logo.png' %}" alt="logo"></a>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="slider-content s-slider-content pt-100" data-animation="fadeInLeft" data-delay=".4s">
+                            <h5 data-animation="fadeInUp" data-delay=".4s">Bienvenido al</h5>
+                            <h2 data-animation="fadeInUp" data-delay=".4s">Jardín de Niños Solecito</h2>
+                            <p data-animation="fadeInUp" data-delay=".6s">El Jardín de Niños Solecito es una institución educativa de alto renombre para pequeños de etapa preescolar. Más de 15 años nos respaldan</p>
+                            <div class="slider-btn mt-30">
+                                <a href="{% url 'About' %}" class="btn mr-15" data-animation="fadeInUp" data-delay=".4s">Saber más</a>
                             </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7">
-                            <div class="main-menu text-right text-xl-right">
-                                <nav id="mobile-menu">
-                                    <ul>
-                                        <li class="has-sub"><a href="{% url 'Home' %}">Inicio</a></li>
-                                        <li><a href="{% url 'About' %}">Nosotros</a></li>
-                                        <li class="has-sub">
-                                            <a href="#">Actividades</a>
-                                            <ul>
-                                                <li><a href="{% url 'Tareas' %}">Tareas</a></li>
-                                                <li><a href="{% url 'Calendario' %}">Calendario</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="{% url 'Contacto' %}">Contacto</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 text-right d-none d-lg-block mt-30 mb-30 text-right text-xl-right">
-                            <div class="login">
-                                <ul>
-                                    <li>
-                                        <div class="header-btn second-header-btn">
-                                            <a href="{% url 'admin:index' %}" class="btn">Iniciar Sesión</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile-menu"></div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-6"></div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- main-area -->
-    <main>
-        <!-- breadcrumb-area -->
-        <section class="breadcrumb-area d-flex align-items-center" style='background-image:url({% static "inicio/img/bg/chiquillos.png" %})'>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="breadcrumb-wrap text-left">
-                            <div class="breadcrumb-title">
-                                <h2>Inicio</h2>
-                                <div class="breadcrumb-wrap"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- breadcrumb-area-end -->
-
-        <!-- slider-area -->
-        <section id="parallax" class="slider-area slider-four fix p-relative">
-            <div class="slider-shape ss-one layer" data-depth="0.90">
-                <img src="{% static 'inicio/img/bg/slider_shape01.png' %}" alt="shape">
-            </div>
-            <div class="slider-active">
-                <div class="single-slider slider-bg d-flex align-items-center" style="background: url({% static 'inicio/img/slider/slider_img_bg.png' %}) no-repeat;">
-                    <div class="img-main" data-animation="fadeInLeft" data-delay=".2s">
-                        <img src="{% static 'inicio/img/bg/solecito.png' %}" alt="slider-overlay">
-                    </div>
-                    <div class="container">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="slider-content s-slider-content pt-100" data-animation="fadeInLeft" data-delay=".4s">
-                                    <h5 data-animation="fadeInUp" data-delay=".4s">Bienvenido al</h5>
-                                    <h2 data-animation="fadeInUp" data-delay=".4s">Jardín de Niños Solecito</h2>
-                                    <p data-animation="fadeInUp" data-delay=".6s">El Jardín de Niños Solecito es una institución educativa de alto renombre para pequeños de etapa preescolar. Más de 15 años nos respaldan</p>
-                                    <div class="slider-btn mt-30">
-                                        <a href="{% url 'About' %}" class="btn mr-15" data-animation="fadeInUp" data-delay=".4s">Saber más</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- main-area-end -->
-
-    <!-- footer -->
-    <footer class="footer-bg footer-p">
-        <div class="footer-top pt-120 pb-80 p-relative" style="background-image: url({% static 'inicio/img/bg/footer-bg.png' %}); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center;">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="f-widget-title mb-15">
-                                <img src="{% static 'inicio/img/logo/logo.png' %}" alt="img">
-                            </div>
-                            <div class="footer-text mb-20">
-                                <p>Para dudas o aclaraciones ponte en contacto con nosotros a través de nuestros distintos medios de comunicación</p>
-                            </div>
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="f-widget-title">
-                                <h2>Enlaces</h2>
-                           
-
-                                </div>
-                                <div class="footer-link">
-                                    <ul>                                        
-                                        <li><a href="{%url 'Home' %}">Inicio</a></li>
-                                        <li><a href="{%url 'About' %}">Nosotros</a></li>
-                                        <li><a href="{%url 'Tareas' %}">Tareas</a></li>
-                                        <li><a href="{%url 'Calendario' %}">Calendario</a></li>
-                                        <li><a href="{%url 'Contacto' %}">Contacto </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-sm-6">
-                            <div class="footer-widget mb-30">
-                                <div class="f-widget-title">
-                                    <h2>Contactanos</h2>
-                                </div>
-                                <div class="f-contact">
-                                    <ul>
-                                    <li>
-                                        <i class="icon fal fa-map-marker-check"></i>
-                                        <span>Av, Vicepresidente Pino Suárez 750, Cd. Industrial, Morelia, Mich <br></span>
-                                    </li>
-                                    <li>
-                                        <i class="icon fal fa-phone"></i>
-                                        <span>786 207 1843<br>443 5076 103</span>
-                                    </li>
-                                   <li><i class="icon fal fa-envelope"></i>
-                                        <span>
-                                            <a href="mailto:info@example.com">JardinSolecito@gmail.com</a>
-                                       <br>
-                                       <a href="mailto:help@example.com">ContactoSolecito@gmail.com</a>
-                                       </span>
-                                    </li>
-                                </ul>
-                                    
-                                    </div>
-                            </div>
-                        </div>  
-                        
-                                    </form>
-                                 </div>
-                                </div>
-                            </div>
-                        </div>
-                      
-                        
-                    </div>
-                    
-                </div>
-            </div>
-           <div class="copyright-wrap text-center">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-12">                         
-                              Copyright © 2024 Jardín de Niños Solecito, Todos los Derechos Reservados  
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- JS here -->
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/vendor/jquery-3.6.0.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/ajax-form.js"></script>
-        <script src="js/paroller.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/js_isotope.pkgd.min.js"></script>
-        <script src="js/imagesloaded.min.js"></script>
-        <script src="js/parallax.min.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <script src="{% static 'inicio/js/jquery.meanmenu.min.js' %}"></script>
-        <script src="js/parallax-scroll.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/element-in-view.js"></script>
-        <script src="{% static 'inicio/js/main.js'%}"></script>
-
-    </body>
-
-</html>
+    </div>
+</section>
+{% endblock %}
