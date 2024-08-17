@@ -1,0 +1,39 @@
+.btn-success, .alert-success, .label-success {
+    background-color: #ff0c96 !important;  
+    border-color: #ff0c96 !important;      
+}
+
+
+.btn-primary, .alert-primary, .label-primary {
+    background-color: #ffd100 !important;  
+    border-color: #ffd100 !important;      
+}
+
+
+.btn.btn-xs.btn-info.changelink {
+    background-color: #28a745 !important;  
+    border-color: #28a745 !important;      
+    color: #ffffff !important;             
+}
+
+
+.sidebar .nav-link.active {
+    background-color: #ff0c96 !important;  
+    border-color: #ff0c96 !important;      
+}
+
+
+.sidebar .nav-link.active span {
+    color: #ffffff !important;  
+}
+
+
+.sidebar .nav-link:hover {
+    background-color: #ff0c96 !important;  
+    border-color: #ff0c96 !important;      
+}
+
+
+.sidebar .nav-link:hover span {
+    color: #ffffff !important;  
+}
