@@ -17,8 +17,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -31,7 +29,7 @@ INSTALLED_APPS = [
     
 ]
 
-#Jazzmin Config - Diccionario de datos para añadir funcionalidades
+#Plugin de Jazzmin
 JAZZMIN_SETTINGS = {
 
     "site_title": "Panel de Administración",
@@ -39,24 +37,41 @@ JAZZMIN_SETTINGS = {
     "site_logo": "inicio/img/logo/logosolecito.png",
     "site_header": "Administrador Solecito",
     "welcome_sign": "Bienvenido al panel de administrador",
-    "site_title": "Panel de administrador",
     "copyright": "| Jardín de Niños Solecito",
     "search_model": "auth.User",
     "user_avatar": None,
-    "custom_css": None,
+    "custom_css": "inicio/css/admin_custom.css",  # Ruta del archivo CSS poara el admin
     "custom_js": None,
-    "show_ui_builder": False,
-    "navigation_expanded": True,
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
+    "show_ui_builder": True,
+    "navigation_expanded": False,
+    
+
+    "order_with_respect_to": [
+        "admin_interface",#"Acciones para el admin"
+        "Administrar",
+        "Tareas",
+        "Eventos",
+        "Comentarios",
+        "Grupos",
+        "Materias",
+        "auth",  #"Autenticación y autorización"
+    ],
+    
     "icons": {
         "auth": "fas fa-users-cog",
         "auth.Group": "fas fa-users",
         "auth.user": "fas fa-user",
-        
+        "Tareas": "fas fa-tasks",
+        "Eventos": "fas fa-calendar-alt",
+        "Comentarios": "fas fa-comments",
+        "Grupos": "fas fa-users",
+        "Materias": "fas fa-book",
     },
+    
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
-    "related_modal_active": False,
+    "related_modal_active": True,
+    
     "custom_links": {
         "books": [{
             "name": "Make Messages",
@@ -65,20 +80,20 @@ JAZZMIN_SETTINGS = {
             "permissions": ["books.view_book"]
         }]
     },
+    
     "usermenu_links": [
         {"model": "auth.user"}
     ],
+    
     "show_sidebar": True,
     "navigation_expanded": True,
     "hide_apps": [],
     "hide_models": [],
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
-    "custom_css": "inicio/css/admin_custom.css",  # Ruta del archivo CSS personalizado
-    "use_google_fonts_cdn": True,
+    
     "changeform_format": "single",
     "changeform_format_overrides": {"auth.group": "vertical_tabs","auth.user": "collapsible", },
 }
-    
+ 
 
 
 #Para cambiar el lenguaje a español
