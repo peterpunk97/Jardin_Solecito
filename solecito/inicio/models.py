@@ -53,7 +53,7 @@ class Tarea(models.Model):
 
 
 class Evento(models.Model):
-    idEvento = models.AutoField(primary_key=True)  
+    idEvento = models.AutoField(primary_key=True)
     nombreEvento = models.CharField(max_length=200, verbose_name="Nombre del evento")
     fechaEvento = models.DateField(verbose_name="Fecha del evento")
     imagen = models.ImageField(null=True, blank=True, upload_to="img-eventos/", verbose_name="Imagen del evento")
@@ -67,16 +67,17 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nombreEvento
-    
+
 
 class Comentario(models.Model):
-    nombre = models.CharField(max_length=100, verbose_name="Nombre del padre de familia")  
-    correo = models.EmailField(max_length=254, verbose_name="Correo electronico")  
+    nombre = models.CharField(max_length=100, verbose_name="Nombre del padre de familia")
+    correo = models.EmailField(max_length=254, verbose_name="Correo electronico")
     telefono = models.CharField(max_length=15, blank=True, null=True, verbose_name="Telefono")
     mensaje = models.TextField()
+    respuesta = models.TextField(blank=True, null=True, verbose_name="Ingresa tu respuesta")
     creado = models.DateTimeField(auto_now_add=True)
     actualizado = models.DateTimeField(auto_now=True)
-    grupos = models.CharField(max_length=4, verbose_name="Nombre del grupo") 
+    grupos = models.CharField(max_length=4, verbose_name="Nombre del grupo")
 
 
     class Meta:

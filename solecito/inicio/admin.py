@@ -9,9 +9,10 @@ from.models import Comentario
 
 class AdministrarComentario(admin.ModelAdmin):
     readonly_fields = ('nombre', 'correo', 'telefono', 'mensaje','creado','actualizado','grupos')  
-    list_display = ('nombre', 'correo', 'telefono', 'mensaje','creado','actualizado', 'grupos') 
+    list_display = ('nombre', 'correo', 'telefono', 'mensaje', 'grupos','respuesta') 
     search_fields = ('nombre','correo', 'telefono','creado','grupos')
     list_filter = ('nombre','creado','grupos')
+    list_editable = ('respuesta',)
     list_per_page=6
 admin.site.register(Comentario, AdministrarComentario)
 
