@@ -3,13 +3,13 @@ from django.db import models
 class Grupo(models.Model):
     idGrupo = models.AutoField(primary_key=True, verbose_name="ID GRUPO")
     nombreGrupo = models.CharField(max_length=50, verbose_name="Nombre del grupo")
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Grupo"
         verbose_name_plural = "Grupos"
-        ordering = ["created"]
+        ordering = ["creado"]
 
     def __str__(self):
         return self.nombreGrupo
@@ -20,13 +20,13 @@ class Materia(models.Model):
     nombreMateria = models.CharField(max_length=200, verbose_name="Nombre de la Materia")
     descripcionMateria = models.TextField(verbose_name="Agrega una descripción")
     imagen = models.ImageField(null=True, blank=True, upload_to="img-materias/", verbose_name="Imagen de la materia")
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Materia"
         verbose_name_plural = "Materias"
-        ordering = ["created"]
+        ordering = ["creado"]
 
     def __str__(self):
         return self.nombreMateria
@@ -38,15 +38,15 @@ class Tarea(models.Model):
     descripcion = models.TextField(verbose_name="Agrega una descripción")
     fechaEntrega = models.DateField(null=True, blank=True, verbose_name="Fecha de entrega")
     imagen = models.ImageField(null=True, upload_to="img-tareas", verbose_name="Imagen")
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
     grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE, verbose_name="Grupo")
     materia = models.ForeignKey(Materia, on_delete=models.CASCADE, verbose_name="Materia")
 
     class Meta:
         verbose_name = "Tarea"
         verbose_name_plural = "Tareas"
-        ordering = ["created"]
+        ordering = ["creado"]
 
     def __str__(self):
         return self.nombreTarea
@@ -74,6 +74,7 @@ class Comentario(models.Model):
     correo = models.EmailField(max_length=254, verbose_name="Correo electronico")  
     telefono = models.CharField(max_length=15, blank=True, null=True, verbose_name="Telefono")
     mensaje = models.TextField()
+    respuesta = models.TextField(blank=True, null=True, verbose_name="Ingresa tu respuesta")
     creado = models.DateTimeField(auto_now_add=True)
     actualizado = models.DateTimeField(auto_now=True)
     grupos = models.CharField(max_length=4, verbose_name="Nombre del grupo") 
