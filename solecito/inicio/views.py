@@ -76,3 +76,7 @@ def consultarGrupo5(request):
 
     
 
+
+def seguridad(request,nombre=None):
+    return render(request, "inicio/seguridad.html",)
+
