@@ -41,7 +41,7 @@ def Registrar(request):
         if form.is_valid():
             form.save()
             comentarios=Comentario.objects.all()
-            return render(request, 'inicio/dudaslist.html',{'comentarios':comentarios})
+            return render(request, 'inicio/contacto.html',{'comentarios':comentarios})
         form = ComentarioForm()
         return render(request, 'inicio/dudaslist.html', {'form':form})
 #-----------------------------------------------------------------------------

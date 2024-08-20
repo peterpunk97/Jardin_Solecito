@@ -5,28 +5,28 @@
 {% block titulobreadcrumb %}Inicio{% endblock %}
 {% block imagenbreadcrumb%}{% static "inicio/img/bg/chiquillos.png" %}{% endblock %}
 
-
 {% block content %}
 <section id="parallax" class="slider-area slider-four fix p-relative">
-    
     <div class="slider-active">
-        <div class="single-slider slider-bg d-flex align-items-center" >
+        <div class="single-slider slider-bg d-flex align-items-center" style="background: url({% static 'inicio/img/slider/slider_img_bg.png' %}) no-repeat;">
             <div class="img-main" data-animation="fadeInLeft" data-delay=".2s">
                 <img src="{% static 'inicio/img/bg/solecito.png' %}" alt="slider-overlay">
             </div>
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-6">
-                        <div class="slider-content s-slider-content pt-100" data-animation="fadeInLeft" data-delay=".4s">
-                            <h5 data-animation="fadeInUp" data-delay=".4s">Bienvenido al</h5>
-                            <h2 data-animation="fadeInUp" data-delay=".4s">Jardín de Niños Solecito</h2>
-                            <p data-animation="fadeInUp" data-delay=".6s">El Jardín de Niños Solecito es una institución educativa de alto renombre para pequeños de etapa preescolar. Más de 15 años nos respaldan</p>
+                        <div class="slider-content s-slider-content pt-100">
+                            <h5 data-animation="fadeInUp" data-delay=".4s">Biemnvenido al</h5>
+                            <h2 data-animation="fadeInUp" data-delay=".4s">Jardín de Niños</h2>
+                            <h2 data-animation="fadeInUp" data-delay=".4s">Solecito</h2>
+                            <p data-animation="fadeInUp" data-delay=".6s">El Jardín de Niños Solecito, con más de 15 años de experiencia, ofrece un ambiente seguro y acogedor para la formación integral de los pequeños en su etapa preescolar. Nos enfocamos en respetar el ritmo individual de cada niño, fomentando habilidades sociales, emocionales y cognitivas a través de actividades lúdicas y educativas. Trabajamos en colaboración con los padres para asegurar una educación de calidad que prepare a los niños para los desafíos futuros.</p>
                             <div class="slider-btn mt-30">
                                 <a href="{% url 'About' %}" class="btn mr-15" data-animation="fadeInUp" data-delay=".4s">Saber más</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6"></div>
+                    <div class="col-lg-6 col-md-6">
+                    </div>
                 </div>
             </div>
         </div>

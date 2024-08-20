@@ -1,12 +1,10 @@
 {% extends 'inicio/base.html' %}
 {% load static %}
-{% block titulo%} Todos los grupos{% endblock%}
-{% block titulobreadcrumb %}Todos los grupos{% endblock %}
+{% block titulo%} General {% endblock%}
+{% block titulobreadcrumb %}General{% endblock %}
 {% block imagenbreadcrumb%}{% static 'inicio/img/bg/bdrc-bg.jpg' %}{% endblock %}
 
 {% block content %}
-
-<!-- Select -->
 <section class="class-area pt-50">
     <div class="container">
         <form method="GET" action="" id="grupoForm">
@@ -18,12 +16,14 @@
                     <option value="{% url 'Grupo1B' %}">Grupo 1B</option>
                     <option value="{% url 'Grupo2A' %}">Grupo 2A</option>
                     <option value="{% url 'Grupo2B' %}">Grupo 2B</option>
-                    <option value="{% url 'TODOS' %}">Para todos</option>
+                    <option value="{% url 'Tareas' %}">GENERAL</option>
                 </select>
             </div>
         </form>
     </div>
 </section>
+
+
 
 
 <!-- Cards -->
@@ -65,7 +65,8 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalLabel{{ forloop.counter }}">{{tarea.nombreTarea}}
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <img src="{{tarea.imagen.url}}" class="class-img-outer" alt="tarea image">
@@ -79,26 +80,26 @@
                                 <p>{{tarea.descripcion}}</p>
                             </span>
 
-
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             {% endfor %}
-            <!-- Enlace de Bootstrap para el Modal -->
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+             <!-- Enlaces a bootstrap para accionar el modal -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script> 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-            <!-- Enlace de Bootstrap para el Modal -->
+            <!-- Enlaces a bootstrap para accionar el modal -->
+
         </div>
     </div>
 </section>
 
 <br>
 <br>
-
-
 {% endblock %}

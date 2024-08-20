@@ -4,7 +4,6 @@
 {% block titulobreadcrumb %}Tareas{% endblock %}
 {% block imagenbreadcrumb%}{% static 'inicio/img/bg/bdrc-bg.jpg' %}{% endblock %}
 
-
 {% block content %}
 <section class="class-area pt-50">
     <div class="container">
@@ -17,7 +16,7 @@
                     <option value="{% url 'Grupo1B' %}">Grupo 1B</option>
                     <option value="{% url 'Grupo2A' %}">Grupo 2A</option>
                     <option value="{% url 'Grupo2B' %}">Grupo 2B</option>
-                    <option value="{% url 'TODOS' %}">Para todos</option>
+                    <option value="{% url 'Tareas' %}">GENERAL</option>
                 </select>
             </div>
         </form>
