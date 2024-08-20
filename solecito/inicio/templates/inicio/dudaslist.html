@@ -1,9 +1,8 @@
 {% extends 'inicio/base.html' %}
 {% load static %}
-{% block titulo%}Dudas Frecuentes{% endblock%}
+{% block titulo%}Dudas Frecuentes{% endblock %}
 {% block titulobreadcrumb %}Dudas Frecuentes{% endblock %}
 {% block imagenbreadcrumb%}{% static "inicio/img/bg/contacto.png" %}{% endblock %}
-
 
 {% block content %}
 
@@ -20,14 +19,17 @@
                                 <th>Padre de familia</th>
                                 <th>Grupo</th>
                                 <th>Comentario</th>
+                                <th>Respuesta</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for duda in dudas %}
                             <tr>
-                                <td>{{duda.nombre}}</td>
-                                <td>{{duda.grupos}}</td>
-                                <td>{{duda.mensaje}}</td>
+                                <td>{{ duda.nombre }}</td>
+                                <td>{{ duda.grupos }}</td>
+                                <td>{{ duda.mensaje }}</td>
+                                <td><strong>{{ duda.respuesta|default_if_none:"..." }}</strong></td> 
+                                <!-- Filtro Default if none- Para que no se visualice un None en despliegue  -->
                             </tr>
                             {% endfor %}
                         </tbody>
