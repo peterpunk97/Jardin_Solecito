@@ -40,10 +40,10 @@ def Registrar(request):
         form = ComentarioForm(request.POST)
         if form.is_valid():
             form.save()
-            comentarios=Comentario.objects.all()
-            return render(request, 'inicio/contacto.html',{'comentarios':comentarios})
+            dudas = Comentario.objects.all()
+            return render(request, 'inicio/dudaslist.html', {'dudas':dudas})
         form = ComentarioForm()
-        return render(request, 'inicio/dudaslist.html', {'form':form})
+        return render(request, 'inicio/contacto.html', {'form':form})
 #-----------------------------------------------------------------------------
 
 
@@ -75,8 +75,4 @@ def consultarGrupo5(request):
 
 
     
-
-
-def seguridad(request,nombre=None):
-    return render(request, "inicio/seguridad.html",)
 
